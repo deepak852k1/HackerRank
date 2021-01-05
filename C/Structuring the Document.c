@@ -13,8 +13,8 @@ document_t* new_document()
     if(!Doc) exit(EXIT_FAILURE);
 
   
-    Doc->data = NULL; // We do not have a pointer yet. Make it NULL.
-    Doc->paragraph_count = 0; // We do not have any Paragraphs yet.
+    Doc->data = NULL; 
+    Doc->paragraph_count = 0; 
 
     
     return Doc;
@@ -40,8 +40,8 @@ void doc_add_paragraph(document_t* Doc)
     int par_idx = Doc->paragraph_count - 1;
 
    
-    Doc->data[par_idx].data = NULL; // No array of Sentence strcutures yet.
-    Doc->data[par_idx].sentence_count = 0; // No Sentences structures yet.
+    Doc->data[par_idx].data = NULL; 
+    Doc->data[par_idx].sentence_count = 0; 
 }
 
 void doc_add_sentence(document_t* Doc)
