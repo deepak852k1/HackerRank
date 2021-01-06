@@ -65,8 +65,8 @@ void doc_add_sentence(document_t* Doc)
  
     int sen_idx = Doc->data[par_idx].sentence_count - 1;
   
-    Doc->data[par_idx].data[sen_idx].data = NULL; // No array of Word strucures yet.
-    Doc->data[par_idx].data[sen_idx].word_count = 0; // No Word structures yet.
+    Doc->data[par_idx].data[sen_idx].data = NULL; 
+    Doc->data[par_idx].data[sen_idx].word_count = 0; 
 }
 
 
@@ -151,10 +151,9 @@ struct document get_document(char* text)
                 doc_add_word(Doc);
                 break;
 
-            // Add a Sentence and a Word if the current char is a point '.'.
+           
             case '.':
-                // Only do it if this isn't the last sentence
-                // nor the end of the string.
+               
                 if (text[char_idx + 1] != '\n' &&
                     text[char_idx + 1] != '\0') {
                     doc_add_sentence(Doc);
