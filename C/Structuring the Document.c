@@ -161,39 +161,31 @@ struct document get_document(char* text)
                 }
                 break;
 
-            // Add a Paragraph, a Sentence and a Word
-            //  if the current char is a new line '\n'.
+            
             case '\n':
                 doc_add_paragraph(Doc);
                 doc_add_sentence(Doc);
                 doc_add_word(Doc);
                 break;
 
-            // Do nothing if this is the end of a string.
+            
             case '\0':
                 break;
 
-            // If the current char is none of the above,
-            // then it should be added to the current Word
+           
             default:
                 doc_add_char(Doc, text[char_idx]);
                 break;
         }
     }
 
-    // Returning the actual structure may not be efficient, depending
-    // on the structure size. I guess the problem designer was ok with
-    // this approach because the Document structure in the test cases
-    // are small
+    
     return *Doc;
 }
 
 
 struct word kth_word_in_mth_sentence_of_nth_paragraph(struct document Doc, int k, int m, int n) {
-    // Make sure you are extra careful with the parameter variable names,
-    // because they are not consistent across functions.
-    // Here k is the position of the word, not the paragraph or
-    // sentence, like the two functions below.
+   
     return Doc.data[n - 1].data[m - 1].data[k - 1];
 }
 
